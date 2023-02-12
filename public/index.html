@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>PhillyNow</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4435/4435702.png">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.17.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.17.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.17.1/firebase-performance-compat.js"></script>
+    <script src="plotly-2.18.0.min.js"></script>
+    <script src="cloudflare.js"></script>
+    <script src="index.js"></script>
+    <!-- 
+    initialize the SDK after all desired features are loaded, set useEmulator to false
+    to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+</head>
+<body>
+    <section id="home" style = "background-color: beige; color:brown">
+    <div class="navbar">
+        
+        <ul>
+            <li><div><a href="#home">Home</a></div></li>
+            <li><div><a href="#info">Road Map</a></div></li>
+            <li><div><a href="#map">Heat Map</a></div></li>
+            <li><div><a href="#connect">Connect</a></div></li>
+        </ul>
+    </div>
+
+    </section>
+    <section2>
+        <div class ="container">
+            <div class="col-1">
+                <div class="module-content">
+                    <div class="hero-text-heading">
+                        Your source for information about the crime in Philadelphia
+                    </div>
+                    <div class="hero-text-description">
+                        PhillyNow is a catalog of heat maps of different types of crime in the Philadelphia region. We are able to display informational heat maps that can allow Philadelphia residents to 
+                        visualize the criminal activity in their area. Utilizing this website, a user can become safer with more knowledge of high crime areas.
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <img src="/public/images/map.png" style="width: 500px; margin-top: -100px;">
+            </div>
+        </div>
+    </section2>
+    <section2a id="info" style = "background-color: burlywood">
+
+        <div class = "container-row">
+            <div class="row-image">
+                <button id="startRoadMap" style = "margin-top: 20px; margin-bottom: 10px;">START ROAD TRIP</button>
+                <div id="stage1Img">
+                    <img id="#stage1Img" src="/public/images/stage1.jpg" style="width: 350px;">
+                </div>
+            </div>
+            <div class="row-text"  id="stage2Text">
+                <h1>Stage 2</h1>
+                <p>During the next stage of the hackathon, we dedicated all of our time to developing the project. We started with barebone front-end and back-end
+                     and developed it further with each addition. We were able to overcome every error we encountered and by 5 am Eastern Pacific Time, we were able to complete the backend of
+                    the website.</p>
+                <button id="buttonStage3" style="margin-top: 50px;">Next Stage</button>
+                
+            </div>
+            <div class="row-image">
+                <div id="stage3Img">
+                    <img id="#stage3Img" src="/public/images/stage3.jpg" style="width: 350px; transform: translateY(50px);">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-row">
+            <img class="image" src="/public/images/road.png" style="width: 100px; height: 150vh;">
+            <img class="slideDownA" id = "slideDownA" src="/public/images/car.png"  style="width: 50px; height: 100px; margin-left: 25px;">
+            <img class="stopSign1" src="/public/images/stop.png" style="width: 25px;">
+            <img class="stopSign2" src="/public/images/stop.png" style="width: 25px;">
+            <img class="stopSign3" src="/public/images/stop.png" style="width: 25px;">
+        </div>
+
+        <div class="container-row">
+            <div class="row-text"  id="stage1Text">
+                <h1>Stage 1</h1>
+                <div>In the first Stage of the Hackathon, we began brainstorming and planning out ways to tackle our idea. We first began with dividing up our roles and 
+                    creating a roadmap that we would have to follow until the end of the event.
+                </div>
+                <button id="buttonStage2" style="margin-top: 50px;">Next Stage</button>
+            </div>
+            <div class="row-image">
+                <div id = "stage2Img"><img id="#stage2Img" src="/public/images/stage2.jpg" style="width: 350px;"></div>
+            </div>
+            <div class="row-text" id="stage3Text">
+                <h1>Stage 3</h1>
+                <p>During the final stretch, we began the testing and submitting phase. This stage felt relieving and satisfying for all of us as it was the culmination of our
+                    hard work. We chose our initial idea because we believe that the community in Philadelphia needs to be aware of the type criminal activity in the neighbourhoods
+                    around them. With this information, a community member can be smarter about their location of travel and be more aware of what's going on around them. Creating a
+                    solution is first recognizin the problem, and with the data we gathered, we can allow for Philadelphia residents to be aware of the problem in their community.
+                </p>
+            </div>
+        </div>
+
+    </section2a>
+    <section3 id="map" style = "background:rgb(40, 40, 40, 1);">
+        <div class="mydiv">
+            <div id ="v23">
+                <h1>Crimes from 2023</h1>
+                <div id = 'mydiv23' class ="rand">  </div>            
+            </div>
+
+            <div id = "v22">
+                <h1>Crimes from 2022</h1>
+                <div class="rand" id='mydiv22'>
+                </div>
+            </div>
+
+            <div id="vTheft">
+                <h1>Theft</h1>
+                <div id = "mydivTHEFT" class = "rand" style="width: 1000px; height: 500px;"> </div>
+            </div>
+
+            <div id ="v23tu">
+                <h1>Crimes from 2023 at Temple University</h1>
+                <div id = "mydivTemple" class = "rand"> </div>
+            </div>
+
+            <div id="v23up">
+                <h1>Crimes from 2023 at UPenn</h1>
+                <div id = "mydivUPenn" class = "rand"> </div>
+            </div>
+
+            <div id="vAss">
+                <h1>Assault</h1>
+                <div id = "mydivASSAULT" class = "rand"> </div>
+            </div>
+
+            <div id="vDrug">
+                <h1>Drug Violation</h1>
+                <div id = "mydivDRUG_VIOLATION" class = "rand"> </div>
+            </div>
+
+            <div id="vHom">
+                <h1>Homicide</h1>
+                <div id = "mydivHOMICIDE" class = "rand"> </div>
+            </div>
+
+            <div id="vRape">
+                <h1>Rape</h1>
+                <div id = "mydivRAPE" class = "rand"> </div>
+            </div>
+
+            <div id="vRob">
+                <h1>Robbery</h1>
+                <div id = "mydivROBBERY" class = "rand"> </div>
+            </div>
+
+
+        </div>
+    </section3>
+    <section5 id = "connect" style = "background-color: #202020;">
+        <div style ="color: orangered; margin-top: 100px; margin-bottom: 20px; font-size: 18px;">
+            Connect with us
+        </div>
+        <div style="font-size: 36px;">
+            We'd love to connect with you
+        </div>
+        <div style = "color: gray; font-size: 16px;"> 
+            Meet the team
+        </div>
+        <div class = "column" style = "margin-top: 100px;">
+            <div>
+                <div style ="color: orangered; font-size: 24px;">
+                    Yasseen Rouni
+                    <div style="font-size: 16px;">
+                        <a href="https://www.linkedin.com/in/yasseenrouni/" target="_blank">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style ="color: orangered; font-size: 24px;">
+                    Henry Nguyen
+                    <div style="font-size: 16px;">
+                        <a href="https://www.linkedin.com/in/henry-nguyen-40b436210/" target="_blank">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style ="color: orangered; font-size: 24px;">
+                    Hang Huynh
+                    <div style="font-size: 16px;">
+                        <a href="https://www.linkedin.com/in/hahuynh1/" target="_blank">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div style ="color: orangered; font-size: 24px;">
+                    Tu Ha
+                    <div style="font-size: 16px;">
+                        <a href="https://www.linkedin.com/in/tunhatha/" target="_blank">
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section5>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
